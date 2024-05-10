@@ -16,6 +16,4 @@ export class CreateUserDto {
   @IsNotEmpty()
   password: string;
 
-  tasks: any[];
-
 }
