@@ -10,7 +10,9 @@ async function bootstrap() {
     envFilePath: '.env',
     isGlobal: true,
   });
-  
+
+  app.enableCors()
+
   await app.listen(5000);
 }
 bootstrap();
