@@ -4,6 +4,10 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import { Toaster } from "react-hot-toast";
+import ProtectedRoute from "./components/ProtectedRoutes";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +16,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Tasks />,
+        element: (
+          <ProtectedRoute>
+            <Tasks />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/login",
@@ -32,9 +40,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <RouterProvider router={router}></RouterProvider>
-    </div>
+      <Toaster position="top-right" />
+    </Provider>
   );
 }
 
