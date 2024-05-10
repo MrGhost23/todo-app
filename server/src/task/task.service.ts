@@ -27,4 +27,10 @@ export class TaskService {
   async update(id: string, title: string, dueDate: Date, isCompleted: boolean): Promise<Task> {
     return this.taskModel.findByIdAndUpdate(id, { title, dueDate, isCompleted }, { new: true }).exec();
   }
+
+  async toggleComplete(id: string): Promise<Task> {
+    const task = await this.taskModel.findById(id).exec();
+    task.isCompleted = !task.isCompleted;
+    return task.save();
+  }
 }
