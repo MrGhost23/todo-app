@@ -59,15 +59,21 @@ Make sure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/MrGhost23/todo-app.git
-cd todo-app
+cd todo-app/client
+npm install
+# or
+yarn install
+```
+
+Install the server as well
+```bash
+cd todo-app/server
 npm install
 # or
 yarn install
 ```
 
 ## Prerequisites
-
-0. Install with npm install for both client and server
 
 1. Start the backend server (Nest.js)
 
