@@ -1,7 +1,6 @@
 import TaskStat from "@/components/TaskStat";
 import TasksList from "@/components/Tasks/TasksList";
 import { Separator } from "@/components/ui/separator";
-import { Skeleton } from "@/components/ui/skeleton";
 import TasksSkeletons from "@/components/ui/skeletons/TasksSkeletons";
 import { TaskType } from "@/types/Task";
 import { fetchTasks } from "@/utils/taskActions";
@@ -27,15 +26,23 @@ const Tasks = () => {
           <TaskStat totalTasks={totalTasks} completedTasks={completedTasks} />
         </div>
         <div className="grid lg:col-span-9">
-          <div className="flex flex-col">
-            <p className="text-2xl mb-4">All Tasks</p>
-            <Separator className="mb-4" />
+          <div className="mb-4">
+            <div className="flex flex-col mb-0">
+              <p className="text-2xl mb-4 font-bold">All Tasks</p>
+              <Separator className="mb-4" />
+            </div>
+            {isLoading ? (
+              <TasksSkeletons number={6} />
+            ) : isError ? (
+              <p className="text-red-500">
+                Failed to fetch tasks. Please try again later.
+              </p>
+            ) : tasks?.length ? (
+              <TasksList tasks={tasks} />
+            ) : (
+              <p className="font-semibold">No tasks found. Create One!</p>
+            )}
           </div>
-          {isLoading ? (
-            <TasksSkeletons number={6} />
-          ) : (
-            <TasksList tasks={tasks ?? []} />
-          )}
         </div>
       </div>
     </div>
