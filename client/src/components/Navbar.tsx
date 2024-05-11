@@ -26,7 +26,7 @@ const Navbar = () => {
         InfraTodo
       </Link>
       <div className="flex mr-4 items-center gap-4">
-        <p className="font-semibold">Hello, {user?.firstName}</p>
+        <p className="font-semibold">{user && "Hello, " + user?.firstName}</p>
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger className="focus:outline-none focus-visible:outline-none focus-visible:ring-0 outline-none border-none">
