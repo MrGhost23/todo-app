@@ -76,7 +76,7 @@ const TaskStat: React.FC<{ totalTasks: number; completedTasks: number }> = ({
             New Task
           </Card>
         </DialogTrigger>
-        <DialogContent className="bg-white">
+        <DialogContent className="bg-white w-[90%] lg:w-full">
           <DialogHeader>
             <DialogTitle className="mb-4">Add New Task</DialogTitle>
             <DialogDescription>
