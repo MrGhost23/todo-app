@@ -10,16 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { AppDispatch } from "@/store/store";
-import { MdOutlineMenu } from "react-icons/md";
 
 const Navbar = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -44,9 +35,7 @@ const Navbar = () => {
             <DropdownMenuContent className="z-10 bg-white mr-4">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer bg-white hover:bg-gray-200">
-                Profile
-              </DropdownMenuItem>
+
               <DropdownMenuItem
                 className="cursor-pointer bg-white hover:bg-gray-200"
                 onClick={handleLogout}
@@ -56,22 +45,6 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        {/* <div className="lg:hidden">
-          <Sheet>
-            <SheetTrigger>
-              <MdOutlineMenu className="text-gray-800 size-6 focus:outline-none outline-none border-none f" />
-            </SheetTrigger>
-            <SheetContent className="bg-white">
-              <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </SheetDescription>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
-        </div> */}
       </div>
     </nav>
   );
