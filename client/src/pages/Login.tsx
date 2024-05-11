@@ -104,10 +104,6 @@ const Login = () => {
               Register
             </Button>
           </Link>
-          <p className="text-xs text-gray-500 mt-4">
-            By clicking continue, you agree to our Terms of Service and Privacy
-            Policy.
-          </p>
         </form>
       </div>
     </div>
