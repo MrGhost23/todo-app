@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import loginAnimation from "@/animations/login-animation.json";
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
 import { Label } from "@radix-ui/react-label";
 import { LoginData } from "@/types/Login";
 import { z } from "zod";
@@ -26,7 +25,6 @@ const Login = () => {
   });
   const {
     register,
-    control,
     handleSubmit,
     formState: { errors },
   } = form;
@@ -47,12 +45,12 @@ const Login = () => {
     });
   };
   return (
-    <div className="min-h-screen container flex">
-      <div className="w-1/2 text-white p-12 flex flex-col justify-center items-center">
+    <div className="min-h-screen container flex flex-col lg:flex-row">
+      <div className="lg:w-1/2 text-white lg:p-12 flex flex-col justify-center items-center">
         <Lottie animationData={loginAnimation} loop={true} />
       </div>
-      <div className="w-1/2 bg-white p-12 flex flex-col justify-center">
-        <form className="mt-12" onSubmit={handleSubmit(onSubmit)}>
+      <div className="lg:w-1/2 bg-white lg:p-12 flex flex-col justify-center">
+        <form className="mt-8" onSubmit={handleSubmit(onSubmit)}>
           <h2 className="text-3xl font-bold mb-4">Sign In</h2>
           <Label htmlFor="email" className="text-gray-600 mb-8">
             Email
@@ -87,9 +85,9 @@ const Login = () => {
 
           <Button
             type="submit"
-            className="bg-primaryColor hover:bg-primaryColor hover:bg-opacity-90 text-white w-full mb-4"
+            className="bg-blue-500 hover:bg-blue-500 hover:bg-opacity-90 text-white w-full mb-4"
           >
-            Login
+            Sign In
           </Button>
           <div className="flex items-center mb-4">
             <div className="flex-grow h-px bg-gray-300" />
