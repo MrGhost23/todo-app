@@ -130,13 +130,13 @@ const Task: React.FC<TaskType> = ({ title, _id, dueDate, isCompleted }) => {
               {dateFormatter(dueDate)}
             </div>
           </span>
-          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-2">
+          <div className="flex justify-end lg:flex-row flex-wrap sm:flex-nowrap gap-2">
             {!isCompleted && (
               <Dialog>
                 <DialogTrigger>
-                  <BiSolidEdit className="cursor-pointer" />
+                  <BiSolidEdit className="cursor-pointer size-5" />
                 </DialogTrigger>
-                <DialogContent className="bg-white">
+                <DialogContent className="bg-white w-[90%] lg:w-full">
                   <DialogHeader>
                     <DialogTitle className="mb-4">Update Your Task</DialogTitle>
                     <DialogDescription>
@@ -223,7 +223,7 @@ const Task: React.FC<TaskType> = ({ title, _id, dueDate, isCompleted }) => {
               </Dialog>
             )}
             <AiFillDelete
-              className="cursor-pointer"
+              className="cursor-pointer size-5"
               onClick={handleDeleteTask}
             />
           </div>
