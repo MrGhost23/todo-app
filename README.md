@@ -75,7 +75,7 @@ yarn install
 
 ## Prerequisites
 
-1. Start the backend server (Nest.js)
+1. Start the backend (server) (Nest.js)
 
 ```bash
 npm run start:dev
@@ -83,7 +83,7 @@ npm run start:dev
 yarn start:dev
 ```
 
-2. Start the frontend server (React.js)
+2. Start the frontend (client) (React.js)
 
 ```bash
 npm run dev
