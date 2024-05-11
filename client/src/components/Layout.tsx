@@ -8,7 +8,9 @@ const Layout = () => {
       {location.pathname !== "/login" && location.pathname !== "/register" && (
         <Navbar />
       )}{" "}
-      <Outlet />
+      <div className="mx-4">
+        <Outlet />
+      </div>
     </>
   );
 };
