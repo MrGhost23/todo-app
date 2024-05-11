@@ -6,7 +6,7 @@ type Props = {
 
 const TasksSkeletons: React.FC<Props> = ({ number }) => {
   return (
-    <div className="grid col-span-9 grid-cols-1 lg:grid-cols-3 gap-4">
+    <div className="grid col-span-8 grid-cols-1 lg:grid-cols-3 gap-4">
       {Array.from({ length: number }).map((_, index) => (
         <TaskSkeleton key={index} />
       ))}
